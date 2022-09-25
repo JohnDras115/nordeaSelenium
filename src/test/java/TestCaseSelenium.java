@@ -7,6 +7,8 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+
+import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LatestNewsPage;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -14,7 +16,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import pages.LatestNewsSection;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,9 +23,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 @TestInstance(value = Lifecycle.PER_CLASS)
-public class TestCase {
+public class TestCaseSelenium {
     private WebDriver driver;
-    static Logger log = Logger.getLogger(String.valueOf(TestCase.class));
+    static Logger log = Logger.getLogger(String.valueOf(TestCaseSelenium.class));
 
     @BeforeEach
     public void setup() throws URISyntaxException {
@@ -33,6 +34,8 @@ public class TestCase {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
+
+
 
     @AfterAll
     public void tearDown() {
